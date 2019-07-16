@@ -21,4 +21,6 @@ public class CompanyService {
 
     public List<Employee> findAllEmployees(String id) {return companyRepository.findAllEmployees(id);}
 
+    public void addCompany(Company company) {companyRepository.addCompany(company);}
+
 }

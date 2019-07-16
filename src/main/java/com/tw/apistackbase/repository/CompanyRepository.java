@@ -33,4 +33,9 @@ public class CompanyRepository {
     public List<Employee> findAllEmployees(String id) {
         return map.get(id).getEmployees();
     }
+
+    public void addCompany(Company company) {
+        String companyId = UUID.randomUUID().toString();
+        map.put(companyId, company);
+    }
 }
