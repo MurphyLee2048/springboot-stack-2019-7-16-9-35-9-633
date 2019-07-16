@@ -4,9 +4,8 @@ import com.tw.apistackbase.model.Company;
 import com.tw.apistackbase.model.Employee;
 import org.springframework.stereotype.Repository;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.lang.reflect.Array;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Repository
@@ -14,7 +13,9 @@ public class CompanyRepository {
     private static Map<String, Company> map = new HashMap<>();
 
     static {
-        map.put("1", new Company("OOCL", 20000, new Employee(1, "murphy", 22, "female", 66666)));
+        Employee employee1 = new Employee(1, "murphy", 22, "female", 66666);
+        Employee employee2 = new Employee(2, "murphy", 22, "female", 66666);
+        map.put("1", new Company("OOCL", 20000, new ArrayList<Employee>(Arrays.asList(employee1,employee2)){}));
     }
 
     public Map<String, Company> getMap() {
@@ -27,5 +28,9 @@ public class CompanyRepository {
 
     public Company findCompanyById(String id) {
         return map.get(id);
+    }
+
+    public List<Employee> findAllEmployees(String id) {
+        return map.get(id).getEmployees();
     }
 }

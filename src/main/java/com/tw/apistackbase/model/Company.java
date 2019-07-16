@@ -1,14 +1,16 @@
 package com.tw.apistackbase.model;
 
+import java.util.List;
+
 public class Company {
     private String companyName;
     private int employeeNumber;
-    private Employee employee;
+    private List<Employee> employees;
 
-    public Company(String companyName, int employeeNumber, Employee employee) {
+    public Company(String companyName, int employeeNumber, List<Employee> employees) {
         this.companyName = companyName;
         this.employeeNumber = employeeNumber;
-        this.employee = employee;
+        this.employees = employees;
     }
 
     public Company() {
@@ -22,8 +24,8 @@ public class Company {
         return employeeNumber;
     }
 
-    public Employee getEmployee() {
-        return employee;
+    public List<Employee> getEmployees() {
+        return employees;
     }
 
     public void setCompanyName(String companyName) {
@@ -34,7 +36,7 @@ public class Company {
         this.employeeNumber = employeeNumber;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
     }
 }
