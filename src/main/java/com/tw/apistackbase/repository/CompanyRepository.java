@@ -25,7 +25,7 @@ public class CompanyRepository {
         return map.values().stream().collect(Collectors.toList());
     }
 
-    public Company findCompanyById(int id) {
+    public Company findCompanyById(String id) {
         return map.get(id);
     }
 }

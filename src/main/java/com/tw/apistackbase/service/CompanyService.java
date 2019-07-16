@@ -16,6 +16,6 @@ public class CompanyService {
         return companyRepository.findAllCompanies();
     }
 
-    public Company findCompanyById(int id) {return companyRepository.findCompanyById(id);}
+    public Company findCompanyById(String id) {return companyRepository.findCompanyById(id);}
 
 }
