@@ -21,7 +21,11 @@ public class CompanyRepository {
         return map;
     }
 
-    public List<Company> findAll() {
+    public List<Company> findAllCompanies() {
         return map.values().stream().collect(Collectors.toList());
+    }
+
+    public Company findCompanyById(int id) {
+        return map.get(id);
     }
 }

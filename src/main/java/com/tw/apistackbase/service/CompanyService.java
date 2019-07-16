@@ -11,8 +11,11 @@ import java.util.List;
 public class CompanyService {
     @Autowired
     private CompanyRepository companyRepository;
-    public List<Company> findAll() {
-        return companyRepository.findAll();
+
+    public List<Company> findAllCompanies() {
+        return companyRepository.findAllCompanies();
     }
+
+    public Company findCompanyById(int id) {return companyRepository.findCompanyById(id);}
 
 }

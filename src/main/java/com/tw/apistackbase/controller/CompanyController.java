@@ -16,7 +16,14 @@ public class CompanyController {
     CompanyService companyService;
 
     @GetMapping("/companies")
-    public List<Company> getEmployees() {
-        return companyService.findAll();
+    public List<Company> findAllCompanies() {
+        return companyService.findAllCompanies();
     }
+
+    @GetMapping("/companies0/{id}")
+    public Company findCompanyById(int id) {
+        return companyService.findCompanyById(id);
+    }
+
+
 }
