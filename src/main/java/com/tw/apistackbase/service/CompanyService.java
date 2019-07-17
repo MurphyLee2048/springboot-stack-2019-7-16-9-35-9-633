@@ -23,4 +23,6 @@ public class CompanyService {
 
     public void addCompany(Company company) {companyRepository.addCompany(company);}
 
+    public void updateCompany(String companyId, String companyName, int employeeNumber, List<Employee> employees) {companyRepository.updateCompany(companyId, companyName, employeeNumber, employees);}
+
 }

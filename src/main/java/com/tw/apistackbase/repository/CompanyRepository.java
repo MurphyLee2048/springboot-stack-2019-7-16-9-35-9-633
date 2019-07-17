@@ -15,7 +15,7 @@ public class CompanyRepository {
     static {
         Employee employee1 = new Employee(1, "murphy", 22, "female", 66666);
         Employee employee2 = new Employee(2, "murphy", 22, "female", 66666);
-        map.put("1", new Company("OOCL", 20000, new ArrayList<Employee>(Arrays.asList(employee1,employee2)){}));
+        map.put("1", new Company("1", "OOCL", 20000, new ArrayList<Employee>(Arrays.asList(employee1,employee2)){}));
     }
 
     public Map<String, Company> getMap() {
@@ -26,8 +26,8 @@ public class CompanyRepository {
         return map.values().stream().collect(Collectors.toList());
     }
 
-    public Company findCompanyById(String id) {
-        return map.get(id);
+    public Company findCompanyById(String companyId) {
+        return map.get(companyId);
     }
 
     public List<Employee> findAllEmployees(String id) {
@@ -37,5 +37,12 @@ public class CompanyRepository {
     public void addCompany(Company company) {
         String companyId = UUID.randomUUID().toString();
         map.put(companyId, company);
+    }
+
+    public void updateCompany(String companyId, String companyName, int employeeNumber, List<Employee> employees) {
+        Company company = map.get(companyId);
+        company.setCompanyName(companyName);
+        company.setEmployeeNumber(employeeNumber);
+        company.setEmployees(employees);
     }
 }

@@ -19,9 +19,9 @@ public class CompanyController {
         return companyService.findAllCompanies();
     }
 
-    @GetMapping("/companies/{id}")
-    public Company findCompanyById(@PathVariable String id) {
-        return companyService.findCompanyById(id);
+    @GetMapping("/companies/{companyId}")
+    public Company findCompanyById(@PathVariable String companyId) {
+        return companyService.findCompanyById(companyId);
     }
 
     @GetMapping("/companies/{id}/employees")
@@ -33,6 +33,9 @@ public class CompanyController {
     public void addCompany(@RequestBody Company company) {
         companyService.addCompany(company);
     }
+
+    @PutMapping("/company/{companyId}")
+    public void updateCompany(@PathVariable String companyId, @RequestBody String companyName, @RequestBody int employeeNumber, @RequestBody List<Employee> employees) {companyService.updateCompany(companyId, companyName, employeeNumber, employees);}
 
 
 }
